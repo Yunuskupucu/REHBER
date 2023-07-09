@@ -1,5 +1,6 @@
 const ad = document.getElementById('ad');
 const soyad = document.getElementById('soyad');
+const tel = document.getElementById('tel');
 const email = document.getElementById('email');
 const adres = document.getElementById('adres');
 const kisiListesi = document.querySelector('tbody');
@@ -16,6 +17,7 @@ function kaydet(e) {
   const eklenecekKisi = {
     ad: ad.value,
     soyad: soyad.value,
+    tel: tel.value,
     email: email.value,
     adres: adres.value,
   };
@@ -67,6 +69,7 @@ function bilgiOlustur(mesaj, durum) {
 function verileriTemizle() {
   ad.value = ' ';
   soyad.value = ' ';
+  tel.value = ' ';
   email.value = ' ';
   adres.value = ' ';
 }
@@ -76,6 +79,7 @@ function kisiyiekle(eklenecekKisi) {
   olusturulanTr.innerHTML = `
   <td>${eklenecekKisi.ad}</td>
   <td>${eklenecekKisi.soyad}</td>
+  <td>${eklenecekKisi.tel}</td>
   <td>${eklenecekKisi.email}</td>
   <td>${eklenecekKisi.adres}</td>
   <td>
@@ -92,15 +96,16 @@ function kisiIslemleriniYap(event) {
     const silinecekTr = event.tagret.parentElement.parentElement;
     const referansMail =
       event.tagret.parentElement.previousElementSibling.textContent;
-  rehberdenSil(silinecekTr, referansMail);
+    rehberdenSil(silinecekTr, referansMail);
   } else if (event.tagret.classList.contains('btn--edit')) {
     const referansTr = event.tagret.parentElement.parentElement;
     const referansMail = referansTr.cells[2].value;
     document.querySelector('.form-btn').value = 'Güncelle';
     ad.value = referansTr.cells[0].textContent;
     soyad.value = referansTr.cells[1].textContent;
-    email.value = referansTr.cells[2].textContent;
-    adres.value = referansTr.cells[3].textContent;
+    tel.value = referansTr.cells[2].textContent;
+    email.value = referansTr.cells[3].textContent;
+    adres.value = referansTr.cells[4].textContent;
     satir = referansTr;
     rehberdeGuncelle(satir);
   }
@@ -129,8 +134,9 @@ function rehberdeGuncelle(kisi) {
 
   satir.cells[0].textContent = kisi.ad;
   satir.cells[1].textContent = kisi.soyad;
-  satir.cells[2].textContent = kisi.email;
-  satir.cells[3].textContent = kisi.adres;
+  satir.cells[2].textContent = kisi.tel;
+  satir.cells[3].textContent = kisi.email;
+  satir.cells[4].textContent = kisi.adres;
 
   document.querySelector('.form-btn').value = 'Kaydet';
   satir = undefined;

@@ -47,10 +47,11 @@ footer {
 }
 
 .form-text {
-  padding: 0.6rem;
+  width: 60rem;
+  padding: 0.5rem;
   outline: none;
   border: 1px solid black;
-  border-radius: 0.6rem;
+  border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -62,6 +63,7 @@ footer {
   border: 3px solid black;
   font-size: 1.2rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .table {
