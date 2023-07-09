@@ -92,6 +92,7 @@ function kisiIslemleriniYap(event) {
     const silinecekTr = event.tagret.parentElement.parentElement;
     const referansMail =
       event.tagret.parentElement.previousElementSibling.textContent;
+  rehberdenSil(silinecekTr, referansMail);
   } else if (event.tagret.classList.contains('btn--edit')) {
     const referansTr = event.tagret.parentElement.parentElement;
     const referansMail = referansTr.cells[2].value;
@@ -101,10 +102,11 @@ function kisiIslemleriniYap(event) {
     email.value = referansTr.cells[2].textContent;
     adres.value = referansTr.cells[3].textContent;
     satir = referansTr;
+    rehberdeGuncelle(satir);
   }
 }
 
-function rehberdebSil(silinecekTrElement, referansMail) {
+function rehberdenSil(silinecekTrElement, referansMail) {
   console.log(silinecekTrElement, referansMail);
   tumElemanlar.forEach((kisi, index) => {
     if (kisi.email === referansMail) {
