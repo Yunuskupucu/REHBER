@@ -1,0 +1,77 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+footer {
+  background: bisque;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.bilgi {
+  border: 1px solid gray;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bilgi-succes {
+  border-color: green;
+  color: green;
+}
+
+.bilgi-error {
+  border-color: red;
+  color: red;
+}
+
+.form {
+  background: bisque;
+  display: flex;
+  flex-direction: column;
+  font-style: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.form-text {
+  padding: 0.5rem;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: bisque;
+  color: black;
+  border: 3px solid black;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.table {
+  border: 1px solid black;
+  width: 100%;
+}
+
+tr,
+th,
+td {
+  text-align: center;
+  padding: 0.5rem;
+}
