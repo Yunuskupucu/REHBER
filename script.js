@@ -63,15 +63,15 @@ function bilgiOlustur(mesaj, durum) {
 
   setTimeout(function () {
     document.querySelector('.bilgi').remove();
-  }, 3000); //3 sn sonra siliniyor
+  }, 2000); //2 sn sonra siliniyor
 }
 
 function verileriTemizle() {
-  ad.value = ' ';
-  soyad.value = ' ';
-  tel.value = ' ';
-  email.value = ' ';
-  adres.value = ' ';
+  ad.value = '';
+  soyad.value = '';
+  tel.value = '';
+  email.value = '';
+  adres.value = '';
 }
 
 function kisiyiekle(eklenecekKisi) {
@@ -83,23 +83,24 @@ function kisiyiekle(eklenecekKisi) {
   <td>${eklenecekKisi.email}</td>
   <td>${eklenecekKisi.adres}</td>
   <td>
-    <button class="btn btn--edit"><i class="far fa-edit"></i></button>
-    <button class="btn btn--delete"><i class="far fa-trash-alt"></i></button>
-  </td>`;
+    <button class="btn--edit"><i class="far fa-edit"></i></button>
+    <button class="btn--delete"><i class="far fa-trash-alt"></i></button> 
+  </td>`; //btn btn--delete
   kisiListesi.appendChild(olusturulanTr);
   tumElemanlar.push(eklenecekKisi);
   bilgiOlustur('Kişi rehbere kaydedildi...', true);
 }
 
 function kisiIslemleriniYap(event) {
-  if (event.tagret.classList.contains('btn--delete')) {
-    const silinecekTr = event.tagret.parentElement.parentElement;
+  if (event.target.classList.contains('btn--delete')) {
+    //console.log(event);
+    const silinecekTr = event.target.parentElement.parentElement;
     const referansMail =
-      event.tagret.parentElement.previousElementSibling.textContent;
-    //rehberdenSil(silinecekTr, referansMail);
-  } else if (event.tagret.classList.contains('btn--edit')) {
-    const referansTr = event.tagret.parentElement.parentElement;
-    const referansMail = referansTr.cells[2].value;
+      event.target.parentElement.previousElementSibling.textContent;
+    rehberdenSil(silinecekTr, referansMail);
+  } else if (event.target.classList.contains('btn--edit')) {
+    const referansTr = event.target.parentElement.parentElement;
+    const referansMail = referansTr.cells[3].value;
     document.querySelector('.form-btn').value = 'Güncelle';
     ad.value = referansTr.cells[0].textContent;
     soyad.value = referansTr.cells[1].textContent;
@@ -107,7 +108,7 @@ function kisiIslemleriniYap(event) {
     email.value = referansTr.cells[3].textContent;
     adres.value = referansTr.cells[4].textContent;
     satir = referansTr;
-    //rehberdeGuncelle(satir);
+    rehberdeGuncelle(satir);
   }
 }
 
@@ -118,7 +119,7 @@ function rehberdenSil(silinecekTrElement, referansMail) {
       tumElemanlar.splice(index, 1);
     }
   });
-  // silinecekTrElement.remove();
+  silinecekTrElement.remove();
   console.log(tumElemanlar);
   verileriTemizle();
   document.querySelector('form-btn').textContent = 'Kaydet';
@@ -126,7 +127,7 @@ function rehberdenSil(silinecekTrElement, referansMail) {
 
 function rehberdeGuncelle(kisi) {
   for (let i = 0; i < tumElemanlar.length; i++) {
-    if (tumElemanlar[i].email === satir.cells[2].textContent) {
+    if (tumElemanlar[i].email === satir.cells[3].textContent) {
       tumElemanlar[i] == kisi;
       break;
     }
