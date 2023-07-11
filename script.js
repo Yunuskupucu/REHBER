@@ -59,7 +59,6 @@ function bilgiOlustur(mesaj, durum) {
   olusturulanBilgi.classList.add(durum ? 'bilgi-succes' : 'bilgi-error');
 
   document.querySelector('.main').insertBefore(olusturulanBilgi, form);
-  // oluşan div formdan önce eklendi
 
   setTimeout(function () {
     document.querySelector('.bilgi').remove();
@@ -85,7 +84,7 @@ function kisiyiekle(eklenecekKisi) {
   <td>
     <button class="btn--edit"><i class="far fa-edit"></i></button>
     <button class="btn--delete"><i class="far fa-trash-alt"></i></button> 
-  </td>`; //btn btn--delete
+  </td>`; //btn / btn--delete
   kisiListesi.appendChild(olusturulanTr);
   tumElemanlar.push(eklenecekKisi);
   bilgiOlustur('Kişi rehbere kaydedildi...', true);
@@ -113,16 +112,16 @@ function kisiIslemleriniYap(event) {
 }
 
 function rehberdenSil(silinecekTrElement, referansMail) {
-  console.log(silinecekTrElement, referansMail);
+  //console.log(silinecekTrElement, referansMail);
   tumElemanlar.forEach((kisi, index) => {
     if (kisi.email === referansMail) {
       tumElemanlar.splice(index, 1);
     }
   });
-  silinecekTrElement.remove();
+  //silinecekTrElement.remove();
   console.log(tumElemanlar);
   verileriTemizle();
-  document.querySelector('form-btn').textContent = 'Kaydet';
+  document.querySelector('.form-btn').textContent = 'Kaydet';
 }
 
 function rehberdeGuncelle(kisi) {
