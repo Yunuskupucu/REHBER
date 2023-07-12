@@ -87,7 +87,7 @@ function kisiyiekle(eklenecekKisi) {
   </td>`; //btn / btn--delete
   kisiListesi.appendChild(olusturulanTr);
   tumElemanlar.push(eklenecekKisi);
-  bilgiOlustur('Kişi rehbere kaydedildi...', true);
+  bilgiOlustur('Kişi Kaydedildi ✅', true);
 }
 
 function kisiIslemleriniYap(event) {
