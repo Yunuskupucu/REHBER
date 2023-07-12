@@ -112,13 +112,13 @@ function kisiIslemleriniYap(event) {
 }
 
 function rehberdenSil(silinecekTrElement, referansMail) {
-  //console.log(silinecekTrElement, referansMail);
+  console.log(silinecekTrElement, referansMail);
   tumElemanlar.forEach((kisi, index) => {
     if (kisi.email === referansMail) {
       tumElemanlar.splice(index, 1);
     }
   });
-  //silinecekTrElement.remove();
+  silinecekTrElement.remove();
   console.log(tumElemanlar);
   verileriTemizle();
   document.querySelector('.form-btn').textContent = 'Kaydet';
