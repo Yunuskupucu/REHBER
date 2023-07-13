@@ -82,11 +82,9 @@ function kisiyiekle(eklenecekKisi) {
   <td>${eklenecekKisi.email}</td>
   <td>${eklenecekKisi.adres}</td>
   <td>
-    <img class="btn--edit" src="./edit.jpeg" style="height:20px;weight:10px"/>
-    <img class="btn--delete" src="./trash.jpeg" style="height:20px;weight:10px"/>
-  </td>`; //btn / btn--delete
-  // <button class="btn--edit"><i class="far fa-edit"></i></button>
-  //<button class="btn--delete"><i class="far fa-trash-alt"></i></button>;
+    <img class="btn--edit" src="./edit.svg" style="height:20px;weight:10px"/>
+    <img class="btn--delete" src="./trash.svg" style="height:20px;weight:10px"/>
+  </td>`;
   kisiListesi.appendChild(olusturulanTr);
   tumElemanlar.push(eklenecekKisi);
   bilgiOlustur('Kişi Kaydedildi ✅', true);
