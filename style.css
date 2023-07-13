@@ -9,8 +9,8 @@
 }
 
 body {
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 10%;
+  margin-right: 10%;
   background: radial-gradient(
     circle,
     rgba(34, 193, 195, 1) 0%,
@@ -57,7 +57,7 @@ footer {
 
 .form-text {
   font-size: 1rem;
-  width: 40rem;
+  width: 30rem;
   padding: 0.5rem;
   outline: none;
   border: 1px solid black;

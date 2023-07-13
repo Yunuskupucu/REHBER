@@ -5,6 +5,7 @@ const email = document.getElementById('email');
 const adres = document.getElementById('adres');
 const kisiListesi = document.querySelector('tbody');
 const form = document.getElementById('form');
+const file = document.getElementById('file');
 const tumElemanlar = [];
 
 let satir = undefined;
